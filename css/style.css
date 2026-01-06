@@ -302,6 +302,43 @@ body::before {
     box-shadow: 0 8px 20px rgba(20, 184, 166, 0.35);
 }
 
+/* ==================== BACK TO HOME BUTTON ==================== */
+.back-to-home {
+    position: fixed;
+    top: 90px;
+    left: 30px;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    padding: 0.75rem 1.5rem;
+    background: var(--bg-primary);
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    border-radius: var(--radius-full);
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: var(--shadow-md);
+    z-index: 1000;
+}
+
+.back-to-home:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: translateX(-5px);
+    box-shadow: var(--shadow-xl);
+}
+
+.back-to-home i {
+    transition: var(--transition);
+}
+
+.back-to-home:hover i {
+    transform: translateX(-3px);
+}
+
 .about-resume-download {
     margin-top: var(--spacing-xl);
     padding: var(--spacing-xl);
@@ -1444,6 +1481,14 @@ body::before {
         width: 45px;
         height: 45px;
     }
+
+    /* Back to Home Button */
+    .back-to-home {
+        top: 80px;
+        left: 15px;
+        padding: 0.6rem 1.2rem;
+        font-size: 0.85rem;
+    }
 }
 
 /* Mobile (480px and down) */
@@ -1567,8 +1612,14 @@ body::before {
         height: 40px;
         font-size: 1rem;
     }
-}
 
+    /* Back to Home Button */
+    .back-to-home {
+        top: 75px;
+        left: 10px;
+        padding: 0.5rem 1rem;
+        font-size: 0.8rem;
+    }
 }
 
 /* ==================== ACCESSIBILITY ==================== */
