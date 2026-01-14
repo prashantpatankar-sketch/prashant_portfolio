@@ -423,6 +423,13 @@ body::before {
     transform: scale(1.05);
 }
 
+.logo a::before,
+.logo a::after,
+.logo span::before,
+.logo span::after {
+    display: none !important;
+}
+
 .logo span {
     font-family: var(--font-display);
 }
@@ -563,6 +570,11 @@ body::before {
     -webkit-text-fill-color: transparent;
     background-clip: text;
     line-height: 1.1;
+}
+
+.hero-name::before,
+.hero-name::after {
+    display: none !important;
 }
 
 .hero-role {

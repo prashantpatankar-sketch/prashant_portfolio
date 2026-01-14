@@ -59,24 +59,65 @@ Service ID: [You'll see this on Email Services page]
 
 **Subject:** `New Portfolio Contact: {{from_name}}`
 
-**Email Content:** Copy this exactly:
+**Email Content (HTML):** Click "Edit HTML" and copy this exactly:
+
+```html
+<div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; background: #f8fafc; padding: 20px;">
+  <div style="background: linear-gradient(135deg, #2563eb, #7c3aed); padding: 30px; border-radius: 10px 10px 0 0; text-align: center;">
+    <h2 style="color: white; margin: 0;">📩 New Portfolio Contact</h2>
+  </div>
+  
+  <div style="background: white; padding: 30px; border-radius: 0 0 10px 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+    <p style="font-size: 16px; color: #1e293b; margin-bottom: 25px;">
+      You've received a new message from your portfolio website!
+    </p>
+    
+    <div style="background: #f1f5f9; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
+      <p style="margin: 0 0 10px 0; color: #64748b; font-weight: 600; font-size: 14px;">FROM:</p>
+      <p style="margin: 0; color: #1e293b; font-size: 18px; font-weight: bold;">{{from_name}}</p>
+    </div>
+    
+    <div style="background: #f1f5f9; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
+      <p style="margin: 0 0 10px 0; color: #64748b; font-weight: 600; font-size: 14px;">EMAIL:</p>
+      <p style="margin: 0; color: #2563eb; font-size: 16px;">
+        <a href="mailto:{{from_email}}" style="color: #2563eb; text-decoration: none;">{{from_email}}</a>
+      </p>
+    </div>
+    
+    <div style="background: #f1f5f9; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
+      <p style="margin: 0 0 15px 0; color: #64748b; font-weight: 600; font-size: 14px;">MESSAGE:</p>
+      <p style="margin: 0; color: #1e293b; font-size: 15px; line-height: 1.6; white-space: pre-wrap;">{{message}}</p>
+    </div>
+    
+    <div style="text-align: center; padding-top: 20px; border-top: 2px solid #e2e8f0; margin-top: 30px;">
+      <p style="color: #94a3b8; font-size: 13px; margin: 0;">
+        💼 Sent from your Portfolio Website
+      </p>
+    </div>
+  </div>
+</div>
+```
+
+**OR use Plain Text Content (simpler):**
 
 ```
-Hi there!
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📩 NEW PORTFOLIO CONTACT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-You've received a new message from your portfolio website:
+FROM: {{from_name}}
 
-Name: {{from_name}}
-Email: {{from_email}}
+EMAIL: {{from_email}}
 
-Message:
+MESSAGE:
 {{message}}
 
----
-Sent from Portfolio Website
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+💼 Sent from Portfolio Website
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ```
 
-- [ ] Click "Create Template"
+- [ ] Click "Save" or "Create Template"
 - [ ] Template created ✅
 
 **Save your Template ID:** `_________________________`
