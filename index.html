@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Prashant Patankar - Full Stack Developer | Exploring tech, building cool stuff & open to opportunities">
+    <title>Prashant Patankar | Welcome</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* ==================== CSS VARIABLES ==================== */
+        :root {
+            --primary-accent: #6366f1;
+            --primary-dark: #4f46e5;
+            --secondary-accent: #ec4899;
+            --tertiary-accent: #14b8a6;
+            --success-color: #22c55e;
+            --danger-color: #ef4444;
+            
+            --bg-primary: #ffffff;
+            --bg-secondary: #fafafa;
+            --bg-tertiary: #f5f5f5;
+            
+            --dark-bg: #0f172a;
+            --dark-card: #1e293b;
+            
+            --text-primary: #1f2937;
+            --text-secondary: #6b7280;
+            --text-muted: #9ca3af;
+            
+            --border-light: #e5e7eb;
+            --border-dark: #d1d5db;
+            
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* ==================== GLOBAL STYLES ==================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'Poppins', sans-serif;
+            background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            position: relative;
+            overflow-x: hidden;
+            color: var(--text-primary);
+        }
+
+        /* Animated Background Gradient */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 20% 50%, rgba(99, 102, 241, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(236, 72, 153, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 50% 80%, rgba(20, 184, 166, 0.08) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* ==================== CONTAINER ==================== */
+        .container {
+            max-width: 680px;
+            width: 100%;
+            position: relative;
+            z-index: 1;
+            animation: slideUp 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ==================== PROFILE SECTION ==================== */
+        .profile-section {
+            text-align: center;
+            margin-bottom: 50px;
+            animation: slideDown 1s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .profile-image-wrapper {
+            position: relative;
+            width: 160px;
+            height: 160px;
+            margin: 0 auto 30px;
+            background: linear-gradient(135deg, var(--primary-accent), var(--secondary-accent));
+            border-radius: 50%;
+            padding: 4px;
+            box-shadow: 0 0 0 1px var(--border-light), var(--shadow-2xl);
+        }
+
+        .profile-image {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: none;
+            transition: var(--transition);
+            background: var(--bg-primary);
+        }
+
+        .profile-image:hover {
+            transform: scale(1.05);
+            filter: brightness(0.95);
+        }
+
+        .profile-name {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
+            background: linear-gradient(135deg, var(--primary-accent) 0%, var(--secondary-accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .profile-tagline {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+            line-height: 1.6;
+            font-weight: 400;
+            letter-spacing: 0.3px;
+        }
+
+        .profile-name::before,
+        .profile-name::after {
+            display: none !important;
+        }
+
+        .profile-emoji {
+            font-size: 1.3rem;
+            margin-left: 6px;
+            display: inline-block;
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+
+        /* ==================== LINKS SECTION ==================== */
+        .links-section {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .link-card {
+            background: var(--bg-primary);
+            border: 2px solid var(--border-light);
+            border-radius: 12px;
+            padding: 24px 28px;
+            text-decoration: none;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            transition: var(--transition);
+            box-shadow: var(--shadow-md);
+            position: relative;
+            overflow: hidden;
+            animation: fadeInRight 0.6s ease-out backwards;
+        }
+
+        .link-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .link-card:hover::before {
+            left: 100%;
+        }
+
+        .link-card:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .link-card:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .link-card:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .link-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-xl);
+            border-color: var(--primary-accent);
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.03) 0%, rgba(236, 72, 153, 0.03) 100%);
+        }
+
+        .link-card:active {
+            transform: translateY(-2px);
+        }
+
+        .link-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            flex-shrink: 0;
+            transition: var(--transition);
+            color: white;
+            font-weight: 600;
+        }
+
+        .link-card:hover .link-icon {
+            transform: scale(1.1);
+        }
+
+        .link-icon.portfolio {
+            background: linear-gradient(135deg, var(--primary-accent) 0%, var(--primary-dark) 100%);
+        }
+
+        .link-icon.github {
+            background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+        }
+
+        .link-icon.linkedin {
+            background: linear-gradient(135deg, #0077b5 0%, #005582 100%);
+        }
+
+        .link-content {
+            flex: 1;
+            text-align: left;
+        }
+
+        .link-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: var(--text-primary);
+            letter-spacing: -0.3px;
+        }
+
+        .link-description {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.4;
+        }
+
+        .link-arrow {
+            font-size: 1.3rem;
+            color: var(--text-muted);
+            transition: var(--transition);
+            flex-shrink: 0;
+        }
+
+        .link-card:hover .link-arrow {
+            transform: translateX(6px);
+            color: var(--primary-accent);
+        }
+
+        /* ==================== THEME TOGGLE (NEW) ==================== */
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background: var(--bg-primary);
+            border: 2px solid var(--border-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: var(--shadow-lg);
+            transition: var(--transition);
+            z-index: 100;
+        }
+
+        .theme-toggle:hover {
+            transform: scale(1.1) rotate(15deg);
+            box-shadow: var(--shadow-xl);
+            border-color: var(--primary-accent);
+        }
+
+        .theme-toggle i {
+            font-size: 1.3rem;
+            color: var(--primary-accent);
+        }
+
+        /* Dark Theme Styles */
+        body.dark-theme {
+            --bg-primary: #0f172a;
+            --bg-secondary: #1e293b;
+            --bg-tertiary: #334155;
+            --text-primary: #f1f5f9;
+            --text-secondary: #cbd5e1;
+            --text-muted: #94a3b8;
+            --border-light: #334155;
+            --border-dark: #475569;
+        }
+
+        body.dark-theme::before {
+            background-image: 
+                radial-gradient(circle at 20% 50%, rgba(99, 102, 241, 0.18) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(236, 72, 153, 0.18) 0%, transparent 50%),
+                radial-gradient(circle at 50% 80%, rgba(20, 184, 166, 0.15) 0%, transparent 50%);
+        }
+
+        body.dark-theme .link-card {
+            background: var(--bg-secondary);
+            border-color: var(--border-light);
+        }
+
+        body.dark-theme .link-card:hover {
+            background: var(--bg-tertiary);
+        }
+
+        body.dark-theme .theme-toggle {
+            background: var(--bg-secondary);
+        }
+
+        /* ==================== STATS BADGE (NEW) ==================== */
+        .stats-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.12) 0%, rgba(236, 72, 153, 0.12) 100%);
+            padding: 8px 16px;
+            border-radius: 20px;
+            margin-top: 10px;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            border: 1px solid var(--border-light);
+        }
+
+        .stats-badge i {
+            color: var(--primary-accent);
+        }
+
+        /* ==================== FOOTER ==================== */
+        .footer-text {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 2px solid var(--border-light);
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            animation: fadeInUp 1.5s ease-out;
+            line-height: 1.6;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .footer-text a {
+            color: var(--primary-accent);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .footer-text a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-accent);
+            transition: var(--transition);
+        }
+
+        .footer-text a:hover::after {
+            width: 100%;
+        }
+
+        /* ==================== RESPONSIVE DESIGN ==================== */
+        @media (max-width: 768px) {
+            .profile-name {
+                font-size: 2.2rem;
+            }
+
+            .profile-tagline {
+                font-size: 1rem;
+            }
+
+            .profile-image-wrapper {
+                width: 140px;
+                height: 140px;
+                margin-bottom: 25px;
+            }
+
+            .link-card {
+                padding: 20px 24px;
+                gap: 16px;
+            }
+
+            .link-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 1.4rem;
+            }
+
+            .link-title {
+                font-size: 1.1rem;
+            }
+
+            .link-description {
+                font-size: 0.85rem;
+            }
+
+            .links-section {
+                gap: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 12px;
+            }
+
+            .profile-name {
+                font-size: 1.8rem;
+                letter-spacing: -0.3px;
+            }
+
+            .profile-tagline {
+                font-size: 0.95rem;
+            }
+
+            .profile-image-wrapper {
+                width: 120px;
+                height: 120px;
+                margin-bottom: 20px;
+            }
+
+            .link-card {
+                padding: 16px 20px;
+                gap: 14px;
+            }
+
+            .link-icon {
+                width: 45px;
+                height: 45px;
+                font-size: 1.2rem;
+            }
+
+            .link-title {
+                font-size: 1rem;
+            }
+
+            .link-arrow {
+                font-size: 1.1rem;
+            }
+
+            .footer-text {
+                margin-top: 40px;
+                font-size: 0.85rem;
+            }
+        }
+
+        /* ==================== ACCESSIBILITY ==================== */
+        .link-card:focus {
+            outline: 3px solid var(--primary-accent);
+            outline-offset: 2px;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Theme Toggle Button (NEW) -->
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <div class="container">
+        <!-- Profile Section -->
+        <div class="profile-section">
+            <div class="profile-image-wrapper">
+                <img src="sp.jpeg" alt="Prashant Patankar" class="profile-image">
+            </div>
+            <h1 class="profile-name">Prashant Patankar</h1>
+            <p class="profile-tagline">
+                Full Stack Developer <span class="profile-emoji">💻</span><br>
+                Exploring tech, building cool stuff & open to opportunities
+            </p>
+            <!-- Stats Badge (NEW) -->
+            <div class="stats-badge">
+                <i class="fas fa-eye"></i>
+                <span id="visitorCount">Loading visitors...</span>
+            </div>
+        </div>
+
+        <!-- Links Section -->
+        <div class="links-section">
+            <!-- Portfolio Link -->
+            <a href="portfolio.html" class="link-card">
+                <div class="link-icon portfolio">
+                    <i class="fas fa-briefcase"></i>
+                </div>
+                <div class="link-content">
+                    <div class="link-title">My Portfolio</div>
+                    <div class="link-description">View my projects, skills & experience</div>
+                </div>
+                <div class="link-arrow">
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+            </a>
+
+            <!-- Resume/CV Link (NEW) -->
+            <a href="assets/resume/Prashant_Patankar_Resume.pdf" class="link-card" download>
+                <div class="link-icon" style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);">
+                    <i class="fas fa-file-pdf"></i>
+                </div>
+                <div class="link-content">
+                    <div class="link-title">Download Resume</div>
+                    <div class="link-description">Get my latest CV in PDF format</div>
+                </div>
+                <div class="link-arrow">
+                    <i class="fas fa-download"></i>
+                </div>
+            </a>
+
+            <!-- GitHub Link -->
+            <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="link-card">
+                <div class="link-icon github">
+                    <i class="fab fa-github"></i>
+                </div>
+                <div class="link-content">
+                    <div class="link-title">GitHub</div>
+                    <div class="link-description">Check out my code & open source contributions</div>
+                </div>
+                <div class="link-arrow">
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+            </a>
+
+            <!-- LinkedIn Link -->
+            <a href="https://www.linkedin.com/in/prashant-patankar-0a3243225?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer" class="link-card">
+                <div class="link-icon linkedin">
+                    <i class="fab fa-linkedin"></i>
+                </div>
+                <div class="link-content">
+                    <div class="link-title">LinkedIn</div>
+                    <div class="link-description">Connect with me professionally</div>
+                </div>
+                <div class="link-arrow">
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+            </a>
+
+            <!-- Email Contact (NEW) -->
+            <a href="mailto:prashantpatankar@example.com" class="link-card">
+                <div class="link-icon" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <div class="link-content">
+                    <div class="link-title">Email Me</div>
+                    <div class="link-description">Send me a direct email</div>
+                </div>
+                <div class="link-arrow">
+                    <i class="fas fa-paper-plane"></i>
+                </div>
+            </a>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer-text">
+            <p>&copy; 2026 Prashant Patankar. All rights reserved.</p>
+        </div>
+    </div>
+
+    <!-- Script for interactions -->
+    <script>
+        // ==================== THEME TOGGLE ====================
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = themeToggle.querySelector('i');
+        
+        // Check for saved theme preference or default to 'light'
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        if (currentTheme === 'dark') {
+            document.body.classList.add('dark-theme');
+            themeIcon.classList.remove('fa-moon');
+            themeIcon.classList.add('fa-sun');
+        }
+        
+        // Toggle theme on click
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-theme');
+            
+            if (document.body.classList.contains('dark-theme')) {
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+
+        // ==================== VISITOR COUNTER ====================
+        const visitorCountElement = document.getElementById('visitorCount');
+        
+        // Simple visitor counter using localStorage
+        let visitorCount = localStorage.getItem('siteVisits') || 0;
+        visitorCount = parseInt(visitorCount) + 1;
+        localStorage.setItem('siteVisits', visitorCount);
+        
+        // Display visitor count with animation
+        setTimeout(() => {
+            visitorCountElement.textContent = `${visitorCount} visit${visitorCount > 1 ? 's' : ''}`;
+        }, 500);
+
+        // ==================== RIPPLE EFFECT ====================
+        // Add smooth interactions
+        document.querySelectorAll('.link-card').forEach(card => {
+            card.addEventListener('click', function(e) {
+                const ripple = document.createElement('span');
+                const rect = this.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                const x = e.clientX - rect.left - size / 2;
+                const y = e.clientY - rect.top - size / 2;
+                
+                ripple.style.width = ripple.style.height = size + 'px';
+                ripple.style.left = x + 'px';
+                ripple.style.top = y + 'px';
+                ripple.style.position = 'absolute';
+                ripple.style.borderRadius = '50%';
+                ripple.style.background = 'rgba(99, 102, 241, 0.35)';
+                ripple.style.transform = 'scale(0)';
+                ripple.style.animation = 'ripple 0.6s ease-out';
+                ripple.style.pointerEvents = 'none';
+                
+                this.appendChild(ripple);
+                
+                setTimeout(() => ripple.remove(), 600);
+            });
+        });
+
+        // ==================== FLOATING ANIMATION ====================
+        // Add subtle floating animation to profile image
+        const profileImage = document.querySelector('.profile-image-wrapper');
+        let floatDirection = 1;
+        let floatPosition = 0;
+        
+        setInterval(() => {
+            floatPosition += floatDirection * 0.5;
+            if (floatPosition >= 10 || floatPosition <= -10) {
+                floatDirection *= -1;
+            }
+            profileImage.style.transform = `translateY(${floatPosition}px)`;
+        }, 50);
+
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes ripple {
+                to {
+                    transform: scale(4);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
